@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Exclusivo - Contenido VIP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes shine {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        @keyframes zoomEffect {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .btn-premium-shine {
+            background: linear-gradient(90deg, #e11d48 0%, #f43f5e 35%, #fff 50%, #f43f5e 65%, #e11d48 100%);
+            background-size: 200% auto;
+            color: white;
+            animation: shine 3s linear infinite, pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .bg-zoom {
+            animation: zoomEffect 20s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between font-sans animate-fade-in relative overflow-x-hidden">
+
+    <!-- Imagen de Fondo con Animación de Zoom y Capa Oscura -->
+    <div class="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+        <img src="https://i.imgur.com/9bsjKP6.jpeg" alt="Fondo" class="absolute inset-0 w-full h-full object-cover bg-zoom">
+        <!-- Capa semitransparente para asegurar la legibilidad del texto -->
+        <div class="absolute inset-0 bg-slate-950/60"></div>
+    </div>
+
+    <!-- Header / Advertencia de Edad -->
+    <header class="bg-rose-950/40 border-b border-rose-900/50 py-2 px-4 text-center text-xs text-rose-300 relative z-10">
+        ⚠️ Sitio exclusivo para mayores de 18 años (+18). Todo el contenido es explícito y protegido.
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl flex-grow relative z-10">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <span class="bg-rose-600/20 text-rose-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-rose-500/30">
+                Acceso Limitado
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-3 tracking-tight">
+                Descarga Mis Paquetes de <span class="text-rose-500">Dropbox</span> Gratis
+            </h1>
+            <p class="text-slate-200 font-medium max-w-xl mx-auto text-base md:text-lg drop-shadow">
+                Elige tu pack favorito o desbloquea el contenido completo solo por registrarte gratis.
+            </p>
+        </section>
+
+        <!-- Grid de Opciones de Descarga -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+
+            <!-- Opción 1: Paquete Básico -->
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden backdrop-blur-sm shadow-xl">
+                <div class="absolute top-0 right-0 bg-slate-800/80 text-slate-300 text-xs px-3 py-1 rounded-bl-xl font-medium">
+                    Libre
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-2 text-slate-100">Paquete Básico</h2>
+                    <p class="text-rose-400 font-medium text-sm mb-4">5 Fotos Exclusivas</p>
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                        Una pequeña muestra de lo que subo habitualmente. Descárgalo de forma inmediata desde Dropbox con un solo clic.
+                    </p>
+                </div>
+                <a href="https://www.dropbox.com/scl/fo/3vvoltodg8elir44k5iqe/ACE-5ENpK2TqRlO0AdoVrSE?rlkey=b1eadrqkpzzdl8lxrt28hc9qt&st=rp8j154z&dl=0" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-800/80 hover:bg-slate-700 hover:scale-[1.02] active:scale-[0.98] text-slate-100 text-center font-medium py-3 rounded-xl transition-all duration-300 text-sm block border border-slate-700/50">
+                    Descargar Gratis (5 Fotos)
+                </a>
+            </div>
+
+            <!-- Opción 2: Paquete Premium -->
+            <div class="bg-gradient-to-b from-rose-950/30 to-slate-900/40 border-2 border-rose-600/60 rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-rose-950/50 backdrop-blur-sm">
+                <div class="absolute top-0 right-0 bg-rose-600 text-white text-xs px-3 py-1 rounded-bl-xl font-bold uppercase tracking-wider">
+                    Recomendado 🔥
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-2 text-white">Paquete Premium VIP </h2>
+                    <p class="text-rose-400 font-medium text-sm mb-2">150 Fotos + 70 Videos </p>
+                    <p class="text-slate-200 text-xs mb-4 font-medium leading-relaxed">
+                        Para poder descargar gratis el paquete premium solo debes registrarte en nuestra página web gratis y confirmar tu correo electrónico.
+                    </p>
+
+                    <!-- 2 Puntos Importantes dentro de la tarjeta -->
+                    <ul class="text-slate-200 text-xs text-left mb-6 space-y-2 bg-slate-950/40 p-3 rounded-xl border border-rose-900/30">
+                        <li class="flex items-center space-x-2">
+                            <span class="text-rose-500 font-bold text-sm">✓</span>
+                            <span><strong> Registro gratis </strong></span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-rose-500 font-bold text-sm">✓</span>
+                            <span><strong> No se usa tarjeta de crédito </strong></span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="https://clicknlook.site/a/Kr54Ni401WhAzBp" target="_blank" rel="noopener noreferrer" class="w-full text-center font-semibold py-3 rounded-xl transition-all duration-300 text-sm block shadow-md shadow-rose-600/30 btn-premium-shine hover:scale-[1.02] active:scale-[0.98]">
+                    Desbloquear Paquete Premium
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Sección de Advertencia -->
+        <section class="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 rounded-2xl p-6 md:p-8 max-w-xl mx-auto text-center shadow-xl">
+            <h3 class="text-xl font-bold mb-4 text-white">Verificación de Cuenta</h3>
+
+            <!-- Advertencia -->
+            <div class="bg-rose-950/30 border border-rose-900/40 rounded-xl p-4 text-rose-200 text-xs md:text-sm text-center leading-relaxed font-medium">
+                ⚠️ <strong>Aviso importante:</strong> Si no activas tu cuenta a través de tu correo electrónico no podrás descargar el paquete gratis de dropbox premium.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900/80 py-6 text-center text-xs text-slate-400 relative z-10 bg-slate-950/40 backdrop-blur-sm">
+        &copy; 2026 Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
