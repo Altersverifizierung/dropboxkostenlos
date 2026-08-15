@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exklusiver Zugang - VIP-Inhalt</title>
+    <title>Acceso Exclusivo - Contenido VIP</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -50,23 +50,30 @@
         }
         .card-hover-effect:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px -15px rgba(225, 29, 72, 0.25);
-            border-color: rgba(244, 63, 94, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(225, 29, 72, 0.4);
+            border-color: rgba(244, 63, 94, 0.9);
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between font-sans animate-fade-in relative overflow-x-hidden">
 
-    <!-- Imagen de Fondo con Animación de Zoom y Capa Oscura -->
+    <!-- Fondo Adaptativo (Video en Móvil y Foto en Escritorio) -->
     <div class="fixed inset-0 w-full h-full -z-10 overflow-hidden">
-        <img src="https://i.imgur.com/9bsjKP6.jpeg" alt="Fondo" class="absolute inset-0 w-full h-full object-cover bg-zoom">
-        <!-- Capa semitransparente para asegurar la legibilidad del texto -->
-        <div class="absolute inset-0 bg-slate-950/60"></div>
+        <!-- Video para Móvil (< 768px): https://i.imgur.com/R7nKT5A.mp4 -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover block md:hidden">
+            <source src="https://i.imgur.com/YOxqd5B.mp4" type="video/mp4">
+        </video>
+
+        <!-- Foto para Escritorio (>= 768px): https://i.imgur.com/9bsjKP6.jpeg -->
+        <img src="https://i.imgur.com/kwglXWM.png" alt="Fondo Escritorio" class="absolute inset-0 w-full h-full object-cover bg-zoom hidden md:block">
+
+        <!-- Capa semitransparente optimizada -->
+        <div class="absolute inset-0 bg-slate-950/65"></div>
     </div>
 
     <!-- Header / Advertencia de Edad -->
     <header class="bg-rose-950/40 border-b border-rose-900/50 py-2 px-4 text-center text-xs text-rose-300 relative z-10">
-        ⚠️ Exklusive Website für Personen ab 18 Jahren (+18). Alle Inhalte sind explizit und geschützt.
+        ⚠️ Sitio exclusivo para mayores de 18 años (+18). Todo el contenido es explícito y protegido.
     </header>
 
     <!-- Contenido Principal -->
@@ -75,82 +82,82 @@
         <!-- Hero Section -->
         <section class="text-center mb-12">
             <span class="bg-rose-600/20 text-rose-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-rose-500/30">
-                Begrenzter Zugang
+                Acceso Limitado
             </span>
             <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-3 tracking-tight">
-                Lade meine <span class="text-rose-500">Dropbox</span>-Pakete kostenlos herunter
+                Descarga Mis Paquetes de <span class="text-rose-500">Dropbox</span> Gratis
             </h1>
             <p class="text-slate-200 font-medium max-w-xl mx-auto text-base md:text-lg drop-shadow">
-                Wähle dein Lieblingspaket oder schalte den gesamten Inhalt durch eine kostenlose Registrierung frei.
+                Elige tu pack favorito o desbloquea el contenido completo solo por registrarte gratis.
             </p>
         </section>
 
         <!-- Grid de Opciones de Descarga -->
         <div class="grid md:grid-cols-2 gap-6 mb-12">
 
-            <!-- Opción 1: Paquete Básico -->
-            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden backdrop-blur-sm shadow-xl card-hover-effect">
-                <div class="absolute top-0 right-0 bg-slate-800/80 text-slate-300 text-xs px-3 py-1 rounded-bl-xl font-medium">
-                    Kostenlos
+            <!-- Opción 1: Paquete Básico (Alta transparencia + Animación) -->
+            <div class="bg-slate-950/40 border border-slate-700/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden backdrop-blur-md shadow-xl card-hover-effect">
+                <div class="absolute top-0 right-0 bg-slate-900/60 text-slate-300 text-xs px-3 py-1 rounded-bl-xl font-medium border-l border-b border-slate-700/40">
+                    Libre
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-2 text-slate-100">Basispaket</h2>
-                    <p class="text-rose-400 font-medium text-sm mb-4">5 Exklusive Fotos</p>
+                    <h2 class="text-xl font-bold mb-2 text-slate-100">Paquete Básico</h2>
+                    <p class="text-rose-400 font-medium text-sm mb-4">5 Fotos Exclusivas</p>
                     <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                        Ein kleiner Vorgeschmack auf das, was ich normalerweise poste. Lade es direkt mit nur einem Klick von Dropbox herunter.
+                        Una pequeña muestra de lo que subo habitualmente. Descárgalo de forma inmediata desde Dropbox con un solo clic.
                     </p>
                 </div>
-                <a href="https://www.dropbox.com/scl/fo/3vvoltodg8elir44k5iqe/ACE-5ENpK2TqRlO0AdoVrSE?rlkey=b1eadrqkpzzdl8lxrt28hc9qt&st=rp8j154z&dl=0" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-800/80 hover:bg-slate-700 hover:scale-[1.02] active:scale-[0.98] text-slate-100 text-center font-medium py-3 rounded-xl transition-all duration-300 text-sm block border border-slate-700/50">
-                    Kostenlos herunterladen (5 Fotos)
+                <a href="https://www.dropbox.com/scl/fo/3vvoltodg8elir44k5iqe/ACE-5ENpK2TqRlO0AdoVrSE?rlkey=b1eadrqkpzzdl8lxrt28hc9qt&st=rp8j154z&dl=0" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900/60 hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] text-slate-100 text-center font-medium py-3 rounded-xl transition-all duration-300 text-sm block border border-slate-700/50">
+                    Descargar Gratis (5 Fotos)
                 </a>
             </div>
 
-            <!-- Opción 2: Paquete Premium -->
-            <div class="bg-gradient-to-b from-rose-950/30 to-slate-900/40 border-2 border-rose-600/60 rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-rose-950/50 backdrop-blur-sm card-hover-effect">
+            <!-- Opción 2: Paquete Premium (Alta transparencia + Animación) -->
+            <div class="bg-rose-950/30 border-2 border-rose-600/50 rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-rose-950/50 backdrop-blur-md card-hover-effect">
                 <div class="absolute top-0 right-0 bg-rose-600 text-white text-xs px-3 py-1 rounded-bl-xl font-bold uppercase tracking-wider">
-                    Empfohlen 🔥
+                    Recomendado 🔥
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-2 text-white">VIP-Premiumpaket</h2>
-                    <p class="text-rose-400 font-medium text-sm mb-2">150 Fotos + 70 Videos</p>
+                    <h2 class="text-xl font-bold mb-2 text-white">Paquete Premium VIP </h2>
+                    <p class="text-rose-400 font-medium text-sm mb-2">150 Fotos + 70 Videos </p>
                     <p class="text-slate-200 text-xs mb-4 font-medium leading-relaxed">
-                        Um das Premiumpaket kostenlos herunterzuladen, musst du dich lediglich kostenlos auf unserer Website registrieren und deine E-Mail-Adresse bestätigen.
+                        Para poder descargar gratis el paquete premium solo debes registrarte en nuestra página web gratis y confirmar tu correo electrónico.
                     </p>
 
                     <!-- 2 Puntos Importantes dentro de la tarjeta -->
                     <ul class="text-slate-200 text-xs text-left mb-6 space-y-2 bg-slate-950/40 p-3 rounded-xl border border-rose-900/30">
                         <li class="flex items-center space-x-2">
                             <span class="text-rose-500 font-bold text-sm">✓</span>
-                            <span><strong>Kostenlose Registrierung</strong></span>
+                            <span><strong> Registro gratis </strong></span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-rose-500 font-bold text-sm">✓</span>
-                            <span><strong>Keine Kreditkarte erforderlich</strong></span>
+                            <span><strong> No se usa tarjeta de crédito </strong></span>
                         </li>
                     </ul>
                 </div>
                 <a href="https://clicknlook.site/a/Kr54Ni401WhAzBp" target="_blank" rel="noopener noreferrer" class="w-full text-center font-semibold py-3 rounded-xl transition-all duration-300 text-sm block shadow-md shadow-rose-600/30 btn-premium-shine hover:scale-[1.02] active:scale-[0.98]">
-                    Premiumpaket freischalten
+                    Desbloquear Paquete Premium
                 </a>
             </div>
 
         </div>
 
-        <!-- Sección de Advertencia (Sin animación al pasar el mouse) -->
-        <section class="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 rounded-2xl p-6 md:p-8 max-w-xl mx-auto text-center shadow-xl">
-            <h3 class="text-xl font-bold mb-4 text-white">Kontoverifizierung</h3>
+        <!-- Sección de Advertencia (Alta transparencia) -->
+        <section class="bg-slate-950/40 backdrop-blur-md border border-slate-700/40 rounded-2xl p-6 md:p-8 max-w-xl mx-auto text-center shadow-xl">
+            <h3 class="text-xl font-bold mb-4 text-white">Verificación de Cuenta</h3>
 
             <!-- Advertencia -->
             <div class="bg-rose-950/30 border border-rose-900/40 rounded-xl p-4 text-rose-200 text-xs md:text-sm text-center leading-relaxed font-medium">
-                ⚠️ <strong>Wichtiger Hinweis:</strong> Wenn du dein Konto nicht über deine E-Mail-Adresse aktivierst, kannst du das kostenlose Dropbox-Premiumpaket nicht herunterladen.
+                ⚠️ <strong>Aviso importante:</strong> Si no activas tu cuenta a través de tu correo electrónico no podrás descargar el paquete gratis de dropbox premium.
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900/80 py-6 text-center text-xs text-slate-400 relative z-10 bg-slate-950/40 backdrop-blur-sm">
-        &copy; 2026 Alle Rechte vorbehalten.
+    <footer class="border-t border-slate-900/80 py-6 text-center text-xs text-slate-400 relative z-10 bg-slate-950/70 backdrop-blur-md">
+        &copy; 2026 Todos los derechos reservados.
     </footer>
 
 </body>
